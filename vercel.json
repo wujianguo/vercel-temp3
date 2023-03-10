@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "https://vercel-temp2.vercel.app/"
+    }
+  ]
+}
