@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('https://vercel-temp2.vercel.app/api/hello').then((response) => {
+    axios.get('/api/hello').then((response) => {
       this.data = response.data
     })
   }
