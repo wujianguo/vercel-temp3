@@ -7,6 +7,7 @@ import TheWelcome from './components/TheWelcome.vue'
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <p>{{ data.data }}</p>
+    <p>{{ data2.data }}</p>
     <div class="wrapper">
       <HelloWorld msg='Hello World' />
     </div>
@@ -22,12 +23,16 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      data: { data: 'Loading...'}
+      data: { data: 'Loading...'},
+      data2: { data: 'Loading2...'}
     }
   },
   mounted() {
     axios.get('/api/hello').then((response) => {
       this.data = response.data
+    })
+    axios.get('/api/hello/foo').then((response) => {
+      this.data2 = response.data
     })
   }
 }
